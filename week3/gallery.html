@@ -39,22 +39,67 @@
   
   <main class="services">
       <h1>Gallery</h1>
+    <!---Slide Show -->
+		<div class="slideshow-container">
 
-		<div class="gallery-container">
-			<img src="images/1.jpeg" alt="Spa Image 1">
-			<img src="images/2.jpeg" alt="Spa Image 2">
-			<img src="images/3.jpeg" alt="Spa Image 3">
-			<img src="images/4.jpeg" alt="Spa Image 4">
-			<img src="images/5.jpeg" alt="Spa Image 5">
-			<img src="images/6.jpeg" alt="Spa Image 6">
-			<img src="images/7.jpeg" alt="Spa Image 7">
-			<img src="images/8.jpeg" alt="Spa Image 7">
-		</div>
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 7</div>
+        <img src="images/slideshow1.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 7</div>
+        <img src="images/slideshow2.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 7</div>
+        <img src="images/slideshow3.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 7</div>
+        <img src="images/slideshow4.jpg.jpeg" style="width:100%">
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 7</div>
+        <img src="images/slideshow5.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 7</div>
+        <img src="images/slideshow6.jpeg" style="width:100%">
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 7</div>
+        <img src="images/slideshow7.jpg" style="width:100%">
+      </div>
+
+
+      
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span> 
+        <span class="dot" onclick="currentSlide(8)"></span>
+      </div>
    <!-- Call to Action -->
    <section class="cta-container">
-    <h2>Ready to Experience Our Services?</h2>
+    <div id = "textDiv"><h2>Ready to Experience Our Services?</h2></div>
     <p>Join us today and discover the difference we can make for you!</p>
-    <a href="contact.html" class="cta-button">Contact Us Now</a>
+    <a href="form.html" class="cta-button"><span>Contact Us Now</span></a>
   </section>
 
   </main>
@@ -67,5 +112,34 @@
     <p >&copy; 2024 Wanderlust Voyages | Travel Agency. All rights reserved.</p>
   </footer>
  </div>
+ <script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+
 </body>
 </html>
