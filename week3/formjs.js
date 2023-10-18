@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('registrationForm');
   
-    function validateUsername() {
+    function usernameFunction() {
       const username = document.getElementById('username');
       const usernameControl = document.getElementById('usernameControl');
       const usernameError = document.getElementById('usernameError');
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
         clearError(usernameError);
         setValidationSuccess(usernameControl);
       }
-    }
+    }//Creating a statement for the username, to crerate errors for empty fields and allow valid usernames to pass
   
-    function validateEmail() {
+    function emailFunction() {
       const email = document.getElementById('email');
       const emailControl = document.getElementById('emailControl');
       const emailError = document.getElementById('emailError');
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
         clearError(emailError);
         setValidationSuccess(emailControl);
       }
-    }
+    }//Creating an email function to allow valid email formats, using the emailError element
   
-    function validatePassword() {
+    function passwordFunction() {
       const password = document.getElementById('password');
       const passwordControl = document.getElementById('passwordControl');
       const passwordError = document.getElementById('passwordError');
@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
         clearError(passwordError);
         setValidationSuccess(passwordControl);
       }
-    }
+    }//A password functipn to validate certain passwords, or else creating an error
   
-    function validateConfirmPassword() {
+    function confirmPassword() {
       const confirmPassword = document.getElementById('confirmPassword');
       const confirmPasswordControl = document.getElementById('confirmPasswordControl');
       const confirmPasswordError = document.getElementById('confirmPasswordError');
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clearError(confirmPasswordError);
         setValidationSuccess(confirmPasswordControl);
       }
-    }
+    }//confimring user password fields so that they match
   
     function setError(element, message) {
       element.textContent = message;
